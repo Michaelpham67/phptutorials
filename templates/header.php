@@ -8,10 +8,10 @@
   <style type="text/css"> 
 
 	 .brand{	<!-- setting the CSS for the classes and labeling them as !important to have higher precedence -->
-	  	background: #cbb09c !important;
+	  	background: #00aaff !important;
 	  }
   	.brand-text{
-  		color: #cbb09c !important;
+  		color: #00aaff !important;
   	}
 
   	form{
@@ -28,10 +28,10 @@
 
 	<nav class="white z-depth-0">
     <div class="container">
-      <a href="#" class="center brand-logo brand-text">Ninja Pizza</a>
+      <a href="#" class="left brand-logo brand-text">Ninja Pizza</a>
       <ul id="nav-mobile" class="right hide-on-small-and-down">
         <li><a href="#" class="btn brand z-depth-0">Add a Pizza</a></li>
       </ul>
     </div>
-    
+
   </nav>
