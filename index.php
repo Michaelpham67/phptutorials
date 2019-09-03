@@ -3,13 +3,8 @@
   // NOTE: Also used Materialize (linked external css) and its classes to speed up the CSS process (see TheNetNinja's Tutorials)
   // MYSQLi or PDO, will use MYSQLi for this tutorial, PDO is great to learn for PHP devs 
 
-  // Connect to database
-  $conn = mysqli_connect('localhost', 'michael', '12345', 'ninja_pizza'); // takes 4 parameters, the host, username, pw, and the DB to connect to and stores it in the $conn variable. 
-
-  // check connection
-  if(!$conn){ // if the connection is an error (does not connect), it will echo to the screen the below code. 
-    echo 'Connection error: ' . mysqli_connect_error();
-  }
+  // connected to the db through the include file statement (see db_connect.php)
+  include('config/db_connect.php');
 
   // write SQL queries for all pizzas
   // $sql = 'SELECT * FROM pizzas'; // Select (go and get), * (get all the columns from the record), FROM (pizzas, the specific table)
@@ -58,7 +53,7 @@
 
             </div>
             <div class="card-action right-align">
-              <a class="brand-text" href="#">more info</a>
+              <a class="brand-text" href="details.php?id=<?php echo $pizza['id']?>">more info</a>
             </div>
           </div>
         </div>
@@ -66,11 +61,13 @@
       <?php endforeach; ?>
 
       <!-- Method 1 for syntax of curly braces -->
+      <!--
       <?php if(count($pizzas) >= 3){ ?>
         <p>There are 3 or more pizzas</p>
       <?php } else { ?>
         <p>There are less than 3 pizzas</p>
       <?php } ?>
+      -->
 
       <!-- Method 2 for syntax of curly braces (replaces it with colons and semi-colons) -->
       <?php if(count($pizzas) >= 3): ?>

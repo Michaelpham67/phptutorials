@@ -1,5 +1,7 @@
 <?php 
 
+	include('config/db_connect.php');
+
 	$email = $title = $ingredients = '';// initializing all the variables to an empty string so that when the user first visits the page, the form fields are blank, and when they input and submit the fields, the variables are updated with their inputs. 
 
 	$errors = array('email'=>'', 'title'=>'', 'ingredients'=>''); 
@@ -58,6 +60,23 @@
 	if(array_filter($errors)){ // PHP built-in function. If there are no errors in the array, it will return false | returns true for errors in the array
 		// echo 'There are errors in the form';
 	}else {
+
+		// mysqli_real_escape_string protects the database from any SQL injections (similiar to that of XSS attacks) the $conn variable in the parameter is referenced from the included file at the top when connecting to the db
+		$email = mysqli_real_escape_string($conn, $_POST['email']); 
+		$title = mysqli_real_escape_string($conn, $_POST['title']);
+		$ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
+
+		// Create SQL
+		$sql = "INSERT INTO pizzas(title,email,ingredients) VALUES('$title', '$email', '$ingredients')";
+
+		// save to db and check
+		if(mysqli_query($conn, $sql)){
+		  // success
+		} else {
+			// error
+			echo 'query error: ' . mysqli_error($conn);
+		}
+
 		// echo 'Form is valid';
 		header('Location: index.php'); // PHP built-in function. redirects the user to the index page if there are no errors in the submitted form. 
 	}
