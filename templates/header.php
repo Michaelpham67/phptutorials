@@ -6,14 +6,17 @@
 	// if there is no name entered, then this function will run
 	if($_SERVER['QUERY_STRING'] == 'noname'){
 		// to unset a single variable
-		// unset($_SESSION['name']); 
-
+		unset($_SESSION['name']); 
 		// clears all the session variables
-		session_unset();
+		// session_unset();
 	}
 
 	// storing that in a session variable called 'name'
-	$name=$_SESSION['name']; 
+	// if the name value does not exist, the name will be defaulted to "Guest", the ?? operator (Null Coalescing)
+	$name=$_SESSION['name'] ?? 'Guest'; 
+
+	// get cookie, $_COOKIE is a superglobal in PHP, the gender is set to the user's input, if not, it is set to "Unknown"
+	$gender = $_COOKIE['gender'] ?? 'Unknown'; 
 
 ?>
 
@@ -122,10 +125,14 @@
       <ul id="nav-mobile" class="right hide-on-small-and-down">
       	<!-- echos out the name of the user in the upper-right (or whatever they input in the submit button at sandbox.php) and this is stored in the session superglobal for the entire session -->
       	<li class="user-text grey-text text-darken-1">Hello, <?php echo htmlspecialchars($name); ?></li>
+      	<!-- 
+      	Displays the gender next to the name (from the saved cookie)
+      	<li class="user-text grey-text text-darken-1">(<?php echo htmlspecialchars($gender); ?>)</li> 
+      	-->
       	<li><a href="sandbox.php" class="btn brand-btn2 z-depth-0">Change User</a></li>
         <li><a href="add.php" class="btn brand-btn z-depth-0">Add a Pizza</a></li>
       </ul>
-      
+
     </div>
 
   </nav>

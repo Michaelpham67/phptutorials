@@ -38,6 +38,9 @@
 	// if a user submits a form, the session will start
 	if(isset($_POST['submit'])){
 
+		// cookie for gender, 1st param is the name and 2nd param is the value given, 3rd param is when it expires (86400 in seconds is a day)
+		// setcookie('gender', $_POST['gender'], time() + 86400);
+
 		session_start(); 
 		// storing that in a session variable called 'name'
 		$_SESSION['name'] = $_POST['name'];
@@ -64,8 +67,18 @@
 
 	<h5 class ="submit-name grey-text text-darken-1">Enter your name below:</h5><br>
 	<!-- <p><?php echo $score > 40 ? 'high score!' : 'low score :('; ?></p> -->
-	
+
 	<form class="submit-name" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+
+		<!--
+		The form for selecting the gender which is then used to store in the variable $gender
+		<input type="text" name="name">
+		<select name="gender">
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+		</select>
+		-->
+
 		<input type="text" name="name">
 		<input type="submit" name="submit" value="submit" class="btn brand-btn z-depth-0">
 	</form>
