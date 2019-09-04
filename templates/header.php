@@ -1,3 +1,12 @@
+<?php 
+
+	// starts the session when header.php is loaded 
+	session_start();
+	// storing that in a session variable called 'name'
+	$name=$_SESSION['name']; 
+
+?>
+
 <head>
 
 	<title>Ninja Pizza</title>
@@ -58,6 +67,8 @@
     <div class="container">
       <a href="index.php" class="left brand-logo brand-text">Ninja Pizza</a>
       <ul id="nav-mobile" class="right hide-on-small-and-down">
+      	<!-- echos out the name of the user in the upper-right (or whatever they input in the submit button at sandbox.php) -->
+      	<li class="grey-text">Hello <?php echo htmlspecialchars($name); ?></li>
         <li><a href="add.php" class="btn brand-btn z-depth-0">Add a Pizza</a></li>
       </ul>
     </div>
