@@ -93,15 +93,15 @@
 		<h4 class="center grey-text text-darken-1">Add a Pizza</h4>
 		<form class="white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST"> <!-- the action attribute will store the data to add.php and the method can be either GET or POST-->
 
-			<label>Email:</label>
+			<label class="grey-text text-darken-1">Email:</label>
 			<input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>" required> <!-- The "required" attribute for HTML5 fields so that the form field(s) can't be blank -->
 			<div class="red-text"><?php echo $errors['email']; ?></div>
-			<label>Pizza Name:</label>
 
+			<label class="grey-text text-darken-1">Pizza Name:</label>
 			<input type="text" name="title" value="<?php echo htmlspecialchars($title) ?>" required> <!-- enclosing the variables that the user inputs in the form field in htmlspecialchars to prevent XSS attacks -->
 			<div class="red-text"><?php echo $errors['title']; ?></div>
 
-			<label>Ingredients (comma separated):</label>
+			<label class="grey-text text-darken-1">Ingredients (comma separated):</label>
 			<input type="text" name="ingredients" value="<?php echo htmlspecialchars($ingredients) ?>" required>
 			<div class="red-text"><?php echo $errors['ingredients']; ?></div>
 

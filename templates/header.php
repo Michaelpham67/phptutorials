@@ -2,6 +2,16 @@
 
 	// starts the session when header.php is loaded 
 	session_start();
+
+	// if there is no name entered, then this function will run
+	if($_SERVER['QUERY_STRING'] == 'noname'){
+		// to unset a single variable
+		// unset($_SESSION['name']); 
+
+		// clears all the session variables
+		session_unset();
+	}
+
 	// storing that in a session variable called 'name'
 	$name=$_SESSION['name']; 
 
@@ -47,7 +57,8 @@
 	}
 
   	.brand-text{
-  		color: #ed5740 !important;
+  		color: #e93216 !important;
+  		font-weight: 500;
   	}
 
   	a.brand-text:hover{
@@ -55,7 +66,7 @@
   	}
 
   	.brand-logo{
-  		color: #ed5740 !important;
+  		color: #e93216 !important;
   	}
 
   	.container a.brand-logo:hover{
@@ -88,7 +99,7 @@
   	}
 
   	.user-text{
-  		font-size: 1.2em;
+  		font-size: 1.1em;
   	}
 
   	form{
