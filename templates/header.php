@@ -7,11 +7,39 @@
 
   <style type="text/css"> 
 
-	 .brand{	<!-- setting the CSS for the classes and labeling them as !important to have higher precedence -->
-	  	background: #00aaff !important;
+	.brand{	<!-- setting the CSS for the classes and labeling them as !important to have higher precedence -->
+	  	background: #ed5740 !important;
 	  }
+
+	.brand-btn{
+		background: #ed5740 !important;
+	}
+
   	.brand-text{
-  		color: #00aaff !important;
+  		color: #ed5740 !important;
+  	}
+
+  	.brand-logo{
+  		color: #ed5740 !important;
+  	}
+
+  	.nopizza{
+  		height: 8vh;
+  		width: 11vw;
+  		margin: 20px auto;
+  		padding: 20px;
+  	}
+
+  	.pizza{
+  		width: 100px;
+  		margin: 40px auto -30px;
+  		display: block;
+  		position: relative;
+  		top: -30px;
+  	}
+
+  	.pizza-text{
+  		color: #808080;
   	}
 
   	form{
@@ -30,7 +58,7 @@
     <div class="container">
       <a href="index.php" class="left brand-logo brand-text">Ninja Pizza</a>
       <ul id="nav-mobile" class="right hide-on-small-and-down">
-        <li><a href="add.php" class="btn brand z-depth-0">Add a Pizza</a></li>
+        <li><a href="add.php" class="btn brand-btn z-depth-0">Add a Pizza</a></li>
       </ul>
     </div>
 

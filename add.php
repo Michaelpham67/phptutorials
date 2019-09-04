@@ -106,7 +106,7 @@
 			<div class="red-text"><?php echo $errors['ingredients']; ?></div>
 
 			<div class="center">
-				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
+				<input type="submit" name="submit" value="Submit" class="btn brand-btn z-depth-0">
 			</div>
 
 		</form>

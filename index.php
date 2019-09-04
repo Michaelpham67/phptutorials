@@ -32,7 +32,7 @@
   
   <?php include('templates/header.php'); ?> <!-- includes the external header.php file in the templates directory -->
 
-  <h4 class="center grey-text">Pizzas!</h4>
+  <h4 class="center grey-text text-darken-1">Pizzas!</h4>
 
   <div class="container">
     <div class="row">
@@ -41,13 +41,14 @@
 
         <div class="col s6 md3">
           <div class="card z-depth-0">
+            <img src="img/pizza.png" class="pizza">
             <div class="card-content center">
 
-              <h6><?php echo htmlspecialchars($pizza['title']); ?></h6> <!-- always get in the habit of using htmlspecialchars for any user inputs -->
+              <h6 class="pizza-text"><?php echo htmlspecialchars($pizza['title']); ?></h6> <!-- always get in the habit of using htmlspecialchars for any user inputs -->
               <!-- <div><?php echo htmlspecialchars($pizza['ingredients']) ?></div> -->
-              <ul>
+              <ul class="pizza-text">
                 <?php foreach(explode(',',$pizza['ingredients']) as $ing): ?> <!-- explodes the string to turn it into an array so that we can cycle through it in a loop and echo it in a list format --> 
-                  <li><?php echo htmlspecialchars($ing); ?></li>
+                  <li class="pizza-text"><?php echo htmlspecialchars($ing); ?></li>
                 <?php endforeach; ?>
               </ul>
 
@@ -70,11 +71,13 @@
       -->
 
       <!-- Method 2 for syntax of curly braces (replaces it with colons and semi-colons) -->
+      <!--
       <?php if(count($pizzas) >= 3): ?>
         <p>There are 3 or more pizzas</p>
       <?php else: ?>
         <p>There are less than 3 pizzas</p>
       <?php endif; ?>
+      -->
 
     </div>
   </div>
