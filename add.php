@@ -91,7 +91,7 @@
 
 	<section class="container grey-text">
 		<h4 class="center">Add a Pizza</h4>
-		<form class="white" action="add.php" method="POST"> <!-- the action attribute will store the data to add.php and the method can be either GET or POST-->
+		<form class="white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST"> <!-- the action attribute will store the data to add.php and the method can be either GET or POST-->
 
 			<label>Your Email</label>
 			<input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>" required> <!-- The "required" attribute for HTML5 fields so that the form field(s) can't be blank -->
