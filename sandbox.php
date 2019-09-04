@@ -1,4 +1,5 @@
 <?php 
+
 	// ternary operators vs if and else statements
 	include('templates/header.php');
 	$score = 20;
@@ -16,6 +17,7 @@
 	// Alternative to echoing the value from the ternary operator: (condition, value to return if true, and value to return if false)
 	// echo $score > 40 ? 'high score!' : 'low score :('; 
 
+
 	// super globals
 
 	// $_GET['name'], $_POST['name']
@@ -29,6 +31,7 @@
 	// echo $_SERVER['PHP_SELF'] . '<br />'; 
 
 	// PHP SELF (great for use in the action field of forms, to redirect to the current page) notes here: http://form.guide/php-form/php-form-action-self.html
+
 
 	// sessions (store and saves information that is inputted as long as the browser is open) i.e. forms, reservations, etc. 
 
@@ -47,23 +50,28 @@
 
 	}
 
-
-
 ?>
 
 <!DOCTYPE html>
+
 <html>
+
 <head>
 	<title>PHP Tutorials</title>
 </head>
+
 <body>
+
 	<h5 class ="submit-name grey-text text-darken-1">Enter your name below:</h5><br>
 	<!-- <p><?php echo $score > 40 ? 'high score!' : 'low score :('; ?></p> -->
+	
 	<form class="submit-name" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 		<input type="text" name="name">
 		<input type="submit" name="submit" value="submit" class="btn brand-btn z-depth-0">
 	</form>
 
 	<?php include('templates/footer.php'); ?>
+
 </body>
+
 </html>

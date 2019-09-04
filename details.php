@@ -19,6 +19,7 @@
 
 	}
 
+
 	// check GET request id parameter
 	if(isset($_GET['id'])){
 
@@ -42,6 +43,7 @@
 ?>
 
 <!DOCTYPE html>
+
 <html>
 <head>
 </head>

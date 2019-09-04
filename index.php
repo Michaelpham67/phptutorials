@@ -22,7 +22,6 @@
   mysqli_close($conn);
 
   // print_r(explode(',', $pizzas[0]['ingredients'])); // 1st parameter is how we are splitting the string and the 2nd parameter is 
-
   // print_r($pizzas); // prints the assoc. array to the browser. 
 
 ?>
@@ -40,6 +39,7 @@
       <?php foreach($pizzas as $pizza): ?> <!-- this loops through the array and echos out the corresponding items (columns) (title and ingredients) of the pizza that the user inputted -->
 
         <div class="col s6 md3">
+
           <div class="card z-depth-0">
             <img src="img/pizza.png" class="pizza">
             <div class="card-content center">

@@ -22,11 +22,11 @@
 	<title>Ninja Pizza</title>
 
 	<!-- Linking an external CSS from Materialize CSS website (CDN) under Getting Started -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" type="image/png" href="img/pizza.png" />
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  	<link rel="shortcut icon" type="image/png" href="img/pizza.png" />
 
-  <style type="text/css"> 
+  	<style type="text/css"> 
 
   	html{
   		font-family: 'Roboto', sans-serif;
@@ -115,7 +115,9 @@
 <body class="grey lighten-4">
 
 	<nav class="white z-depth-0">
+
     <div class="container">
+
       <a href="index.php" class="left brand-logo brand-text">Ninja Pizza</a>
       <ul id="nav-mobile" class="right hide-on-small-and-down">
       	<!-- echos out the name of the user in the upper-right (or whatever they input in the submit button at sandbox.php) and this is stored in the session superglobal for the entire session -->
@@ -123,6 +125,7 @@
       	<li><a href="sandbox.php" class="btn brand-btn2 z-depth-0">Change User</a></li>
         <li><a href="add.php" class="btn brand-btn z-depth-0">Add a Pizza</a></li>
       </ul>
+      
     </div>
 
   </nav>

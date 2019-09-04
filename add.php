@@ -10,6 +10,7 @@
 	// if(isset($_GET['submit'])){ 
 	// if the form is submitted, then the function will run this code to echo the email, title, and ingredients that the user inputted in the form. 
 
+
 	// Globals: $_(name of variable in captial letters) i.e. $_GET
 		// echo htmlspecialchars($_POST['email']) . 'br />'; prevents XSS attacks; it looks at the data and turns the special HTML characters like brackets into HTML entities (aka safe string version codes of characters)
 		// echo htmlspecialchars($_POST['title']) . 'br />';
@@ -26,6 +27,7 @@
 		// echo htmlspecialchars($_POST['ingredients']) . 'br />';
 	// } 
 
+
 	// checks if email, title, and ingredients are entered (if it went through server-side)
 	if(empty($_POST['email'])){
 		$errors['email'] ='An email is required <br />';
@@ -38,6 +40,7 @@
 		}
 	}
 
+
 	if(empty($_POST['title'])){
 		$errors['title'] = 'A title is required <br />';
 	} else {
@@ -48,6 +51,7 @@
 		}
 	}
 
+
 	if(empty($_POST['ingredients'])){
 		$errors['ingredients'] = 'At least 1 ingredient is required <br />';
 	} else {
@@ -56,6 +60,7 @@
 			$errors['ingredients'] = 'Ingredients must be a comma separated list <br />';
 	}
 	}// end of POST check
+
 
 	if(array_filter($errors)){ // PHP built-in function. If there are no errors in the array, it will return false | returns true for errors in the array
 		// echo 'There are errors in the form';
@@ -81,6 +86,7 @@
 		header('Location: index.php'); // PHP built-in function. redirects the user to the index page if there are no errors in the submitted form. 
 	}
 
+
 }// end of POST submit 
 ?>
 
@@ -90,6 +96,7 @@
 	<?php include('templates/header.php'); ?>  <!-- includes the external header.php file in the templates directory -->
 
 	<section class="container grey-text">
+		
 		<h4 class="center grey-text text-darken-1">Add a Pizza</h4>
 		<form class="white" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST"> <!-- the action attribute will store the data to add.php and the method can be either GET or POST-->
 
