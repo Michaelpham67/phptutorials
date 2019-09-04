@@ -1,6 +1,6 @@
 <?php 
 	// ternary operators vs if and else statements
-
+	include('templates/header.php');
 	$score = 20;
 
 	// if($score > 40){
@@ -57,12 +57,13 @@
 	<title>PHP Tutorials</title>
 </head>
 <body>
-
+	<h5 class ="submit-name grey-text text-darken-1">Enter your name below:</h5><br>
 	<!-- <p><?php echo $score > 40 ? 'high score!' : 'low score :('; ?></p> -->
-	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+	<form class="submit-name" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 		<input type="text" name="name">
-		<input type="submit" name="submit" value="submit">
+		<input type="submit" name="submit" value="submit" class="btn brand-btn z-depth-0">
 	</form>
 
+	<?php include('templates/footer.php'); ?>
 </body>
 </html>
